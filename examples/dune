@@ -15,7 +15,8 @@
   (modules testpatterns colors almondbread crops cursor cuts emoji inline keys
            letters mouse thisbig runes sierpinski rain sierpinski_lwt linear
            life)
-  (libraries common common_lwt))
+  (libraries common common_lwt)
+  (flags -w -32))
 
 (alias
   (name ex)
