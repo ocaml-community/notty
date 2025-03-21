@@ -1,9 +1,5 @@
-#!/usr/bin/env ocaml
 (* Copyright (c) 2020 David Kaloper Meršinjak. All rights reserved.
    See LICENSE.md. *)
-
-#use "topfind"
-#require "uucp"
 
 let filter p seq i = seq (fun x -> if p x then i x)
 let map f seq i = seq (fun x -> i (f x))
@@ -24,7 +20,7 @@ let intervals_kv seq i =
   seq f;
   match !s with Some e -> i e | _ -> ()
 
-let intervals_p seq =
+let[@warning "-32"] intervals_p seq =
   map (fun x -> x, ()) seq |> intervals_kv |> map (fun (a, b, _) -> a, b)
 
 (* Condenses code points into continuous range. *)
@@ -132,7 +128,7 @@ let extract (ppmli, ppml as ppfs) =
 
   ()
 
-let file = "src/no-uucp/notty_uucp_data"
+let file = "notty_uucp_data"
 
 let with_new name f =
   let o = open_out_gen [Open_trunc; Open_creat; Open_wronly] 0o664 name in
@@ -140,7 +136,7 @@ let with_new name f =
   f ppf; Format.pp_print_flush ppf (); close_out o
 
 let () =
-  Format.printf "Dumping Unicode v%s data to %s.@." Uucp.unicode_version file;
+  Format.printf "Dumping Unicode v%s data to %s.ml and %s.mli.@." Uucp.unicode_version file file;
   with_new (file ^ ".mli") @@ fun ppmli ->
     with_new (file ^ ".ml") @@ fun ppml ->
       extract (ppmli, ppml)
