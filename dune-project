@@ -19,7 +19,8 @@
  (depends
   (ocaml (>= 4.08.0))
   (cppo (and :build (>= 1.1.0)))
-  (uutf (>= 1.0.0)))
+  (uutf (>= 1.0.0))
+  (uucp :with-dev-setup))
  (depopts
   lwt)
  (conflicts

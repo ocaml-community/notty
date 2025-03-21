@@ -1,9 +1,9 @@
 (* Do not edit.
  *
  * This module contains select unicode properties extracted from Uucp,
- * using `./support/gen_unicode_props.ml`.
+ * using `../../support/gen_unicode_props.exe`.
  *
- * Unicode version 13.0.0.
+ * Unicode version 16.0.0.
  *)
 
 (* Uucp.Break.tty_width_hint *)
