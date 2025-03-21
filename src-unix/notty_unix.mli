@@ -9,12 +9,13 @@
 
 open Notty
 
-(** {1:fullscreen Fullscreen input and output}. *)
+(** {1:fullscreen Fullscreen input and output} *)
 
 (** Terminal IO abstraction for fullscreen, interactive applications.
 
-    This module provides both input and output. It assumes exclusive ownership of
-    the IO streams between {{!create}initialization} and {{!release}shutdown}. *)
+    This module provides both input and output. It assumes exclusive ownership
+    of the IO streams between {{!Term.create}initialization} and
+    {{!Term.release}shutdown}. *)
 module Term : sig
 
   type t
