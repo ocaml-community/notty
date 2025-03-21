@@ -1,6 +1,7 @@
 ## unreleased
 
-* Moved to Dune 3.17. (Antonin Décimo)
+* Moved to Dune 3.0. (Antonin Décimo)
+* Update to Unicode 16. (Antonin Décimo)
 
 ## v0.2.3 (2022-09-02)
 
